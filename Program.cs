@@ -18,58 +18,21 @@ int Exp(int numA, int numB){
 int exponentiation = Exp(numA, numB);
 Console.WriteLine("Число {0} в степени {1} равана {2}", numA, numB, exponentiation);
 
-Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+ниже через методы попробовал:*/
 
-452 -> 11
+int numA = ReadInt("Введите число А: ");
+int numB = ReadInt("Введите число B: ");
+ToDegree(numA, numB);
 
-82 -> 10
-
-9012 -> 12
-
-int number = ReadInt("Введи число: ");
-int len = NumberLen(number);
-SumNumbers(number, len);
-
-int ReadInt(string message)
+void ToDegree(int a, int b)
 {
-    Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine());
-}
-int NumberLen(int a){
-    int index = 0;
-    while (a > 0)
+    int result = 1;
+    for (int i = 1; i <= b; i++)
     {
-        a /= 10;
-        index++;
+        result = result * a;
     }
-    return index;
+    Console.WriteLine("Число {0} в степени {1} равана {2}", numA, numB, result);
 }
-void SumNumbers(int n, int len){
-    int sum = 0;
-    for (int i = 1; i <= len; i++)
-    {
-        sum += n % 10;
-        n /= 10;
-    }
-    Console.WriteLine("Сумма введеных чисел = " + sum);
-}
-
-
-Задача 29: Напишите программу, которая задаёт массив из 8 рандомных элементов и выводит их на экран.
-
-1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
-
-6, 1, 33 -> [6, 1, 33]*/
-
-int lenArray = ReadInt("Введи длинну массива: ");
-
-int[] randomArray = new int[lenArray];
-for (int i = 0; i < randomArray.Length; i++)
-{
-    randomArray[i] = new Random().Next(0,99);
-    Console.Write(randomArray[i] + " ");
-}
-
 int ReadInt(string message)
 {
     Console.Write(message);
